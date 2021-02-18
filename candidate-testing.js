@@ -23,8 +23,8 @@ function askForName() {
 function askQuestion() {
   // TODO 1.2b: Ask candidate the question and assign the response as candidateAnswer 
   for (let i = 0; i < questions.length; i++){
-    let candidateAnswer = input.question(`${i + 1}) ${questions[i]}\nYour answer: `);
-    candidateAnswers[i] = candidateAnswer; 
+    let candidateInputAnswer = input.question(`${i + 1}) ${questions[i]}\nYour answer: `);
+    candidateAnswers[i] = candidateInputAnswer; 
     console.log(`Correct answer: ${correctAnswers[i]} \n\n`);      
   }
 }
@@ -40,7 +40,7 @@ function gradeQuiz(candidateAnswers) {
     }
   }
 
-  grade = numberOfCorrectAnswers / 5 * 100;
+  grade = numberOfCorrectAnswers / questions.length * 100;
   console.log(`>>> Overall grade ${grade}% (${numberOfCorrectAnswers} out of 5 responses correct) <<<`);
   if (grade > 80) {
     console.log(`>>> STATUS: PASSED <<<`);
